@@ -10,6 +10,31 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <header class="header">
+      <div class="header__bar row">
+        
+        <div class="user_nav grid-6">
+          <%= link_to 'Top', users_path %>          
+        </div>
+        <div class="user_nav grid-6">
+          <%= link_to 'Record', new_user_registration_path %>
+        </div>
+        <div class="user_nav grid-6">
+          <%= link_to 'Diary', new_user_registration_path %>
+        </div>
+        <div class="user_nav grid-6">
+          <%= link_to 'Chat', new_user_registration_path %>
+        </div>
+        <div class="user_nav grid-6">
+          <a class="post logout" href="/tweets/new">Logout</a>
+        </div>
+
+      </div>
+    </header>
+
     <%= yield %>
   </body>
 </html>

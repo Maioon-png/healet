@@ -1,0 +1,21 @@
+.contents {
+  background-color: lime;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.content-right {
+  background-color: mediumorchid;
+  width: 300px;
+  height: 300px;
+}
+.content-center {
+  background-color: lightblue;
+  width: 300px;
+  height: 300px;
+}
+.content-left {
+  background-color: lightcyan;
+  width: 300px;
+  height: 300px;
+}
