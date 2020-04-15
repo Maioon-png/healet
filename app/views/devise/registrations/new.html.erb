@@ -9,6 +9,22 @@
   </div>
 
   <div class="field">
+    <%= f.label :name %> <em>(6 characters maximum)</em><br />
+    <%= f.text_field :name, autofocus: true, maxlength: "6" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "現在の体重" %><br />
+    <%= f.text_field :start_weight, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "目標体重" %><br />
+    <%= f.text_field :target_weight, autofocus: true %>
+  </div>
+
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
