@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_024541) do
+ActiveRecord::Schema.define(version: 2020_04_16_052114) do
+
+  create_table "meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "morning"
+    t.string "lunch"
+    t.string "dinner"
+    t.string "other"
+    t.datetime "recorded_date"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_meals_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "encrypted_password", default: "", null: false
@@ -19,8 +31,8 @@ ActiveRecord::Schema.define(version: 2020_04_15_024541) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name", default: "", null: false
-    t.decimal "start_weight", precision: 5, scale: 2, null: false
-    t.decimal "target_weight", precision: 5, scale: 2, null: false
+    t.decimal "start_weight", precision: 4, scale: 1, null: false
+    t.decimal "target_weight", precision: 4, scale: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -28,12 +40,14 @@ ActiveRecord::Schema.define(version: 2020_04_15_024541) do
   end
 
   create_table "weights", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.decimal "weight", precision: 5, scale: 2
+    t.decimal "weight", precision: 4, scale: 1
+    t.datetime "recorded_date"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_weights_on_user_id"
   end
 
+  add_foreign_key "meals", "users"
   add_foreign_key "weights", "users"
 end
