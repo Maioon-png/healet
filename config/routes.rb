@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :users, only: :index
   resources :weights, only: [:index, :new, :create, :edit, :update, :destroy]
-  resources :meals, only: :index
+  resources :meals, only: [:index, :new, :create, :edit, :update, :destroy]
 end
