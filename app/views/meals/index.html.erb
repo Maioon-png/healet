@@ -1,0 +1,31 @@
+<div class="contents_meal-index">
+
+   <div class="record-icon">
+    <%= link_to new_weight_path do %>
+      <i class="fas fa-hamburger"></i>
+    <% end %>
+  </div>
+
+  <div class="meals">
+    <% @meals.each do |meal| %>
+      <div class="meal">
+        <div class="morning">
+          <p><%= meal.morning %></p>
+        </div>
+        <div class="lunch">
+          <p><%= meal.lunch %></p>
+        </div>
+        <div class="dinner">
+          <p><%= meal.dinner %></p>
+        </div>
+        <div class="other">
+          <p><%= meal.other %></p>
+        </div>
+      </div>
+      <div class="date">
+        <p><%= meal.recorded_date.strftime('%Y-%m-%d') %></p>
+      </div>  
+    <% end %>
+
+  </div>
+</div>
