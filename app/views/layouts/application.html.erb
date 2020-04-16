@@ -24,13 +24,13 @@
           <%= link_to 'Record', weights_path %>
         </div>
         <div class="user_nav grid-6">
-          <%= link_to 'Diary', new_user_registration_path %>
+          <%= link_to 'Diary', meals_path %>
         </div>
         <div class="user_nav grid-6">
-          <%= link_to 'Chat', new_user_registration_path %>
+          <%= link_to 'Topics', new_user_registration_path %>
         </div>
         <div class="user_nav grid-6">
-          <a class="post logout" href="/tweets/new">Logout</a>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
         </div>
 
       </div>

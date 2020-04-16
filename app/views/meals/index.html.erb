@@ -1,8 +1,8 @@
 <div class="contents_meal-index">
 
    <div class="record-icon">
-    <%= link_to new_weight_path do %>
-      <i class="fas fa-hamburger"></i>
+    <%= link_to new_meal_path do %>
+      <i class="fas fa-hamburger fa-2x"></i>
     <% end %>
   </div>
 
@@ -25,6 +25,10 @@
       <div class="date">
         <p><%= meal.recorded_date.strftime('%Y-%m-%d') %></p>
       </div>  
+      <div class="edit">
+        <%= link_to '編集', edit_meal_path(id: meal.id) %>
+        <%= link_to '削除', meal_path(id: meal.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+      </div>
     <% end %>
 
   </div>
