@@ -1,0 +1,24 @@
+<div class="contents_topic-index">
+
+   <div class="record-icon">
+    <%= link_to new_topic_path do %>
+      <i class="far fa-comment-dots fa-2x"></i>
+    <% end %>
+  </div>
+
+  <div class="topics">
+    <% @topics.each do |topic| %>
+      <div class="topic">
+        <div class="topic-title">
+          <p><%= link_to topic.title, topic_path(id: topic.id) %></p>
+        </div>
+        <div class="topic-title">
+          <p><%= topic.user.name %>さん</p>
+        </div>
+        <div class="topic-date">
+          <p><%= topic.created_at.strftime('%Y-%m-%d') %></p>
+        </div>  
+    <% end %>
+
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_052114) do
+ActiveRecord::Schema.define(version: 2020_04_16_071651) do
 
   create_table "meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "morning"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2020_04_16_052114) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_meals_on_user_id"
+  end
+
+  create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "content", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_topics_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -49,5 +58,6 @@ ActiveRecord::Schema.define(version: 2020_04_16_052114) do
   end
 
   add_foreign_key "meals", "users"
+  add_foreign_key "topics", "users"
   add_foreign_key "weights", "users"
 end
