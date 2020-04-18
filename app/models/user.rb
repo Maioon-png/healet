@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :weights
   has_many :meals
   has_many :topics
+  has_many :comments
 end

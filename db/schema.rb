@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_071651) do
+ActiveRecord::Schema.define(version: 2020_04_18_040951) do
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "topic_id"
+    t.bigint "user_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_comments_on_topic_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "meals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "morning"
@@ -57,6 +67,8 @@ ActiveRecord::Schema.define(version: 2020_04_16_071651) do
     t.index ["user_id"], name: "index_weights_on_user_id"
   end
 
+  add_foreign_key "comments", "topics"
+  add_foreign_key "comments", "users"
   add_foreign_key "meals", "users"
   add_foreign_key "topics", "users"
   add_foreign_key "weights", "users"
