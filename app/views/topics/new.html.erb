@@ -1,0 +1,14 @@
+<div class="post-topic">
+  <div class="topic-form">
+    <%= form_with model:@topic, local: true  do |form| %>
+      <div class="form-topic">
+        <p>タイトル</p>
+        <%= form.text_field :title, class: "hoge", size: 30 %>
+        <p>内容</p>
+        <%= form.text_area :content, size: "30x10" %>
+      <div class="form-btn">
+        <%= form.submit "送信" %>
+      </div>
+    <% end %>
+  </div>
+</div>

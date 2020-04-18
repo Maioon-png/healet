@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :users, only: :index
   resources :weights, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :meals, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :topics, only: [:index, :new, :create, :show]
 end
