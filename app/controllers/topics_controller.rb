@@ -8,8 +8,14 @@ class TopicsController < ApplicationController
   end
 
   def create
-    Topic.create(topic_params)
-    redirect_to topics_path
+    @topic = Topic.create(topic_params)
+    tag_list = params[:tags].split(",")
+    if @topic.save
+      @topic.save_tags(tag_list)
+      redirect_to topics_path
+    else
+      render 'topics/new'
+    end
   end
 
   def show

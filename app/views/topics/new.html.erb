@@ -6,6 +6,14 @@
         <%= form.text_field :title, class: "hoge", size: 30 %>
         <p>内容</p>
         <%= form.text_area :content, size: "30x10" %>
+
+
+        <div class="topic-tags-field">
+          <%= form.label "タグ" %>
+          <ul id="topic-tags">
+          </ul>
+        </div> 
+
       <div class="form-btn">
         <%= form.submit "送信" %>
       </div>
