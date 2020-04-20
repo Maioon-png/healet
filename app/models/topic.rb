@@ -23,4 +23,8 @@ class Topic < ApplicationRecord
     end
   end
 
+  scope :from_tag, -> (tag_id)  { where(id: topic_ids = TopicsTag.where(tag_id: tag_id).select(:topic_id))}
+
+
+
 end

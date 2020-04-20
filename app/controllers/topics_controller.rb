@@ -22,6 +22,28 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @comment = Comment.new
     @comments = @topic.comments.includes(:user)
+
+    
+  end
+
+  def edit
+    @topic = Topic.find(params[:id])
+    @tag_list = @topic.tags.pluck(:name).join(",")
+  end
+
+  def update
+    @topic = Topic.find(params[:id])
+    tag_list = params[:tags].split(",")
+    if @topic.update(topic_params)
+      @topic.save_tags(tag_list)
+    end
+    redirect_to topics_path
+  end
+
+  def destroy
+    topic = Topic.find(params[:id])
+    topic.destroy
+    redirect_to topics_path
   end
 
   private

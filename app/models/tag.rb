@@ -3,4 +3,5 @@ class Tag < ApplicationRecord
 
   has_many :topics_tags
   has_many :topics, through: :topics_tags
+
 end

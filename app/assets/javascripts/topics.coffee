@@ -1,7 +1,4 @@
 $(document).on 'ready page:load', ->
-  $('#topic-tags').tagit
-  fieldName:   'tag_list'
-  singleField: true
   $('#topic-tags').tagit()
   topic_string = $("#tag_hidden").val()
   try
