@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :users, only: :index
   resources :weights, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :meals, only: [:index, :new, :create, :edit, :update, :destroy]
-  resources :topics, only: [:index, :new, :create, :show] do
+  resources :topics, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: :create
   end
+  resources :tags, only: [:index, :show]
 
 end
