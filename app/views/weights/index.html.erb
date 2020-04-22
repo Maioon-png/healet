@@ -1,4 +1,4 @@
-<div class=contents_weight-index>  
+<div class="contents_weight-index">  
   <div class="record-icon">
     <%= link_to new_weight_path do %>
       <i class="fas fa-weight fa-2x"></i>
@@ -14,7 +14,7 @@
           data: {
               labels: <%= @dates.to_json.html_safe %>,
               datasets: [{
-                  label: '# of Votes',
+                  label: '# of Weights',
                   data: <%= @weights %>,
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
@@ -39,7 +39,7 @@
               scales: {
                   yAxes: [{
                       ticks: {
-                          beginAtZero: true
+                          stepSize: 01,
                       }
                   }]
               }
@@ -49,17 +49,17 @@
   </div>
 
   <div class="weight-table">
-    <table border="1">
+    <table>
       <tr>
-        <td>Date</td><td>Weight</td><td>Edit</td>
+        <th>Date</th><th>Weight</th><th>Edit</th>
       </tr>
       <% @user_datas.each do |d| %>
       <tr>
         <td><%= d.recorded_date.strftime('%Y-%m-%d') %></td>
         <td><%= d.weight %> kg</td>
         <td>
-          <%= link_to '編集', edit_weight_path(id: d.id) %>
-          <%= link_to '削除', weight_path(id: d.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+          <%= link_to '編集', edit_weight_path(id: d.id), {class: "weight-edit"} %>/
+          <%= link_to('削除', weight_path(id: d.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "weight-edit") %>
         </td>
       </tr>
       <% end %>

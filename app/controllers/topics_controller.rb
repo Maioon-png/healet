@@ -1,6 +1,8 @@
 class TopicsController < ApplicationController
+  before_action :move_to_index
+
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
@@ -49,6 +51,13 @@ class TopicsController < ApplicationController
   private
   def topic_params
     params.require(:topic).permit(:title, :content).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      flash[:alert] = "Please log in."
+      redirect_to controller: :top, action: :index
+    end
   end
 
 end

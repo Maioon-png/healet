@@ -1,23 +1,7 @@
 <div class="redord-contents">
   <div class="meal-form">
     <%= form_with model:@meal, local: true  do |form| %>
-      <div class="form-date">
-        <%= form.label "日付"%>
-        <%= form.date_select :recorded_date, default: Date.today %>
-      </div>
-      <div class="form-mealt">
-        <p>Morning</p>
-        <%= form.text_area :morning, class: "hoge", size: "30x３" %>
-        <p>Lunch</p>
-        <%= form.text_area :lunch, class: "hoge", size: "30x３" %>
-        <p>Dinner</p>
-        <%= form.text_area :dinner, class: "hoge", size: "30x３" %>
-        <p>Other</p>
-        <%= form.text_area :other, class: "hoge", size: "30x３" %>
-      </div>
-      <div class="form-btn">
-        <%= form.submit "送信" %>
-      </div>
+      <%= render partial: "form", locals: { form: form } %>
     <% end %>
   </div>
 </div>

@@ -1,6 +1,8 @@
 class WeightsController < ApplicationController
-
+  before_action :move_to_index
+  
   def index
+    @user = User.find(current_user.id)
     @user_datas = Weight.where(user_id: current_user.id).order(recorded_date: "ASC")
     @weights = @user_datas.pluck(:weight)
     @day_and_time = @user_datas.pluck(:recorded_date)
@@ -35,6 +37,13 @@ class WeightsController < ApplicationController
   private
   def weight_params
     params.require(:weight).permit(:recorded_date, :weight).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      flash[:alert] = "Please log in."
+      redirect_to controller: :top, action: :index
+    end
   end
 
 end

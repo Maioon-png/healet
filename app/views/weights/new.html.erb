@@ -1,17 +1,7 @@
 <div class="redord-contents">
   <div class="weight-form">
     <%= form_with model:@weight, local: true  do |form| %>
-      <div class="form-date">
-        <%= form.label "日付"%>
-        <%= form.date_select :recorded_date, default: Date.today %>
-      </div>
-      <div class="form-weight">
-        <%= form.label "体重" %>
-        <%= form.number_field :weight, step: "0.1", min: 0, max: 999 %> Kg
-      </div>
-      <div class="form-btn">
-        <%= form.submit "送信" %>
-      </div>
+     <%= render partial: "form", locals: { form: form } %>
     <% end %>
   </div>
 </div>
