@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def move_to_index
     unless user_signed_in?
-      flash[:alert] = "Please log in."
+      flash[:alert] = "Please sign up or log in."
       redirect_to controller: :top, action: :index
     end
   end
