@@ -1,4 +1,8 @@
 $(document).on 'ready page:load', ->
+  tag_string = $("#all_tag_hidden").val()
+  all_tag_list = tag_string.split(" ")
+  $("#topic-tags").tagit
+    availableTags: all_tag_list
   $('#topic-tags').tagit()
   topic_string = $("#tag_hidden").val()
   try

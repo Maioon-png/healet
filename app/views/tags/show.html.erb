@@ -1,10 +1,14 @@
-<div class="tags">
-  <p>タグ：<%= @selected_tag.name %></p>
-  <ul>
-    <% @topics.each do |topic| %>
-      <li>
-        <%= link_to topic.title, topic_path(topic.id) %>
-      </li>
-    <% end %>
-  </ul>
+<div class="contents_tag-show">
+  <div class="tags">
+    <p>タグ：<%= @selected_tag.name %></p>
+    <ul>
+      <% @topics.each do |topic| %>
+      <div class="tag-topic">
+        <li>
+          <%= link_to topic.title, topic_path(topic.id) %>
+        </li>
+      </div>
+      <% end %>
+    </ul>
+  </div>
 </div>

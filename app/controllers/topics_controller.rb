@@ -7,11 +7,12 @@ class TopicsController < ApplicationController
 
   def new
     @topic = Topic.new
+    @all_tag_list = Tag.all.pluck(:name)
   end
 
   def create
     @topic = Topic.create(topic_params)
-    tag_list = params[:tags].split(",")
+    tag_list = params[:tags].join(",")
     if @topic.save
       @topic.save_tags(tag_list)
       redirect_to topics_path
@@ -24,13 +25,12 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @comment = Comment.new
     @comments = @topic.comments.includes(:user)
-
-    
   end
 
   def edit
     @topic = Topic.find(params[:id])
     @tag_list = @topic.tags.pluck(:name).join(",")
+    @all_tag_list = Tag.all.pluck(:name)
   end
 
   def update
