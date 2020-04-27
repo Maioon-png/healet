@@ -1,3 +1,84 @@
 .ui-helper-hidden-accessible {
   display: none;
 }
+.fa-comment-dots {
+  text-decoration: none;
+  color: #999900;
+}
+.topic {
+  margin: 0 auto;
+  width: 500px;
+  border: solid 5px #CCCC00;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  padding: 10px 0 10px 10px;
+}
+.topic-title {
+  font-size: 18px;
+  
+}
+.topic-title a {
+  text-decoration: none; 
+  color: #999999;
+}
+.topic-user-name {
+  font-size: 15px;
+  width: 100px;
+  margin: 0 0 0 auto;
+  color: #555555;
+}
+.topic-date {
+  font-size: 15px;
+  width: 100px;
+  margin: 0 0 0 auto;
+  color: #555555;
+}
+// showページ
+.show-topic {
+  margin-top: 30px;
+}
+.topic-edit {
+  font-size: 15px;
+  width: 100px;
+  margin: 0 0 0 auto;
+  color: #555555;
+}
+.topic-edit a {
+  text-decoration: none; 
+  color: #99CCCC;
+}
+.topic-tag ul {
+  list-style: none;
+  display: flex;
+}
+.topic-tag li {
+  margin-right: 3px;
+}
+.topic-tag a {
+  text-decoration: none; 
+  color: #999999;
+}
+.comments-show {
+  margin: 0 auto;
+  width: 500px;
+}
+.comments-show h4 {
+  text-align: center;
+  padding: 0 0 8px 0;
+}
+.comment {
+  padding: 10px;
+  border: solid 1px #CCCC00;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+.comment-form {
+  margin: 0 auto;
+  width: 500px;
+}
+// newページ
+.topic-form {
+  margin: 0 auto;
+  width: 500px;
+  margin-top: 30px;
+}

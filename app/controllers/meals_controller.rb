@@ -1,6 +1,8 @@
 class MealsController < ApplicationController
+  before_action :move_to_index
+  
   def index
-    @meals = Meal.where(user_id: current_user.id).order(recorded_date: "DESC")
+    @meals = Meal.where(user_id: current_user.id).order(recorded_date: "DESC").page(params[:page]).per(5)
   end
 
   def new
@@ -31,6 +33,13 @@ class MealsController < ApplicationController
   private
   def meal_params
     params.require(:meal).permit(:recorded_date, :morning, :lunch, :dinner, :other).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      flash[:alert] = "Please sign up or log in."
+      redirect_to controller: :top, action: :index
+    end
   end
 
 end

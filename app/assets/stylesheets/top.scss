@@ -7,25 +7,23 @@ header {
   background-color: lightgray;
 }
 
-.main {
-  height: calc(100% - 70px);
+.contents_top-index {
+  height: calc(100% - 30px);
   width: 100%;
-  background-color: lightsalmon;
 }
-.main {
-  display: flex;
-  justify-content: center;
-}
-li {
-  width: 100%;
-  list-style-type: none;
+
+.signup, .login {
+  margin: 30px auto;
+  width: 200px;
   border: #999 solid 1px;
-  margin: 0 0 10px 0;
-  padding: 10px 30px;
+  border-radius: 5px;
+  padding: 10px; 
   text-align: center;
 }
-
-
+.signup a, .login a {
+  text-decoration: none; 
+  color: #999999;
+}
 
 footer {
   height: 30px;

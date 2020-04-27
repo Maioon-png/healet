@@ -39,6 +39,7 @@
           // Used for autocomplete, unless you override `autocomplete.source`.
           availableTags     : [],
 
+
           // Use to override or add any options to the autocomplete widget.
           //
           // By default, autocomplete.source will map to availableTags,
