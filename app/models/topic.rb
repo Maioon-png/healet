@@ -5,6 +5,7 @@ class Topic < ApplicationRecord
   has_many :comments
   has_many :topics_tags
   has_many :tags, through: :topics_tags
+  has_many :likes, dependent: :destroy
 
   def save_tags(tags)
     current_tags = self.tags.pluck(:name) unless self.tags.nil?
@@ -25,6 +26,13 @@ class Topic < ApplicationRecord
 
   scope :from_tag, -> (tag_id)  { where(id: topic_ids = TopicsTag.where(tag_id: tag_id).select(:topic_id))}
 
+  # いいね機能
+  def do_like(user)
+    likes.create(user_id: user.id)
+  end
 
+  def delete_like(user)
+    likes.find_by(user_id: user.id).destroy
+  end
 
 end

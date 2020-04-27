@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :meals
   has_many :topics
   has_many :comments
+  has_many :likes, dependent: :destroy
 end
