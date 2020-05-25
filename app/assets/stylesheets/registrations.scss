@@ -1,0 +1,29 @@
+.user-form {
+  margin: 0 auto;
+  width: 500px;
+}
+.user-form h2 {
+  text-align: center;
+  margin: 15px 0;
+  color: #4D4D4D;
+}
+.field {
+  margin-bottom: 10px;
+}
+input[type='email'], input[type='password'], input[type='number'] {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.user-inform {
+  color: #4D4D4D;
+}
+
+.user-links {
+  margin: 0 auto;
+  width: 500px;
+  text-align: center;
+}
+.user-links a {
+  text-decoration: none;
+  color: #99CCCC;
+}

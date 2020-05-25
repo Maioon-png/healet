@@ -1,0 +1,66 @@
+.meal {
+  margin: 0 auto;
+  width: 500px;
+  border: solid 5px #CCCC00;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+.fa-hamburger {
+  text-decoration: none;
+  color: #999900;
+}
+
+.date {
+  border-bottom: solid 2px #CCCC00;
+  color: #555555;
+}
+.morning, .lunch, .dinner, .other {
+  margin: 5px 0;
+}
+.menu h2 {
+  border-bottom: dotted 1px #CCCC00;
+  color: #999999;
+  margin: 15px 0;
+}
+.menu p {
+  font-size: 15px;
+  color: #555555;
+}
+.menu {
+  margin: 20px 0;
+}
+.edit a {
+  text-decoration: none;
+  color: #99CCCC;
+}
+// フォーム
+.meal-form {
+  margin: 0 auto;
+  width: 500px;
+  margin-top: 30px;
+}
+textarea {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 98%;
+  height: 50px;
+  
+}
+input[type='submit'] {
+  border: none;
+  margin: 10px auto;
+  display: block;
+  width: 50%;
+  height: 30px;
+  appearance: none;
+  background-color: #99CCCC;
+  border-radius: 5px;
+}
+input[type='text'] {
+  border: 1px solid #ccc;
+  appearance: none;
+  border-radius: 5px;
+ 
+}

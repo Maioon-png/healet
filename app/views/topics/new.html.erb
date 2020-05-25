@@ -1,0 +1,7 @@
+<div class="post-topic">
+  <div class="topic-form">
+    <%= form_with model:@topic, local: true  do |form| %>
+      <%= render partial: "form", locals: { form: form } %>
+    <% end %>
+  </div>
+</div>

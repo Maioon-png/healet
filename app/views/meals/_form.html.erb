@@ -1,0 +1,17 @@
+<div class="form-date">
+  <%= form.label "日付"%>
+  <%= form.date_select :recorded_date, default: Date.today %>
+</div>
+<div class="form-mealt">
+  <p>Morning</p>
+  <%= form.text_area :morning, size: "30x３" %>
+  <p>Lunch</p>
+  <%= form.text_area :lunch, size: "30x３" %>
+  <p>Dinner</p>
+  <%= form.text_area :dinner, size: "30x３" %>
+  <p>Other</p>
+  <%= form.text_area :other, size: "30x３" %>
+</div>
+<div class="form-btn">
+  <%= form.submit "送信" %>
+</div>

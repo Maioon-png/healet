@@ -4,34 +4,38 @@
     <title>DietApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/c1f80ad41b.js" crossorigin="anonymous"></script>
+    <%# <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+ 
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <%= render partial: 'layouts/flash' %>
 
     <header class="header">
       <div class="header__bar row">
-        
+        マスターにて変更
         <div class="user_nav grid-6">
           <%= link_to 'Top', users_path %>          
         </div>
         <div class="user_nav grid-6">
-          <%= link_to 'Record', new_user_registration_path %>
+          <%= link_to 'Record', weights_path %>
         </div>
         <div class="user_nav grid-6">
-          <%= link_to 'Diary', new_user_registration_path %>
+          <%= link_to 'Diary', meals_path %>
         </div>
         <div class="user_nav grid-6">
-          <%= link_to 'Chat', new_user_registration_path %>
-        </div>
-        <div class="user_nav grid-6">
-          <a class="post logout" href="/tweets/new">Logout</a>
           add-userにて変更
+          <%= link_to 'Topics', topics_path %>
         </div>
+        <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+          </div>
+        <% end %>
 
       </div>
     </header>
