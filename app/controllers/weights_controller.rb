@@ -1,5 +1,6 @@
 class WeightsController < ApplicationController
   before_action :move_to_index
+  before_action :set_params, only: [:edit, :update, :destroy]
   
   def index
     @user = User.find(current_user.id)
@@ -14,23 +15,25 @@ class WeightsController < ApplicationController
   end
 
   def create
-    Weight.create(weight_params)
-    redirect_to weights_path
+    weight = Weight.new(weight_params)
+    if weight.save
+      redirect_to weights_path
+    else
+      flash.now[:alert] = 'エラーが発生しました。'
+      render :new
+    end
   end
 
   def edit
-    @weight = Weight.find(params[:id])
   end
 
   def update
-    weight = Weight.find(params[:id])
-    weight.update(weight_params)
+    @weight.update(weight_params)
     redirect_to weights_path
   end
 
   def destroy
-    weight = Weight.find(params[:id])
-    weight.destroy
+    @weight.destroy
     redirect_to weights_path
   end
 
@@ -42,8 +45,12 @@ class WeightsController < ApplicationController
   def move_to_index
     unless user_signed_in?
       flash[:alert] = "Please Sign up or log in."
-      redirect_to controller: :top, action: :index
+      redirect_to root_path
     end
+  end
+
+  def set_params
+    @weight = Weight.find(params[:id])
   end
 
 end
