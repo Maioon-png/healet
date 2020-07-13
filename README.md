@@ -1,24 +1,62 @@
-# README
+# :cake: :fries: ダイエットアプリ :fork_and_knife: :pizza:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+体重、食べた物を記録したり、<br>
+他のユーザーとダイエットや美容に関して情報をシェア出来るアプリです。
+<br>
+<br>
 
-Things you may want to cover:
+## :question: なぜ作ったのか
 
-* Ruby version
+家にいる時間が多くなり、結果増えた体重を元に戻すため&食生活の改善をするために作成しました。<br>
+毎日使うためシンプルで使いやすいアプリを目指しました。
+<br>
+<br>
 
-* System dependencies
+## :globe_with_meridians: URL
+〜デプロイしたら載せます〜
+<br>
+<br>
 
-* Configuration
+## :eyes: DEMO
+〜画像載せる〜
+<br>
+<br>
 
-* Database creation
+## :wrench: 使用技術(開発環境)
+### フロントエンド
+* HTML
+* CSS
+* JavaScript
+* jQuery
 
-* Database initialization
+### バックエンド
+* Ruby 2.5.1
+* Rails 5.2.4.3
 
-* How to run the test suite
+### インフラストラクチャー
+* Mysql
 
-* Services (job queues, cache servers, search engines, etc.)
+## 機能一覧
 
-* Deployment instructions
+* ユーザー関連
+    * 新規登録、ログイン、ログアウト
+* 体重
+    * 体重の記録・編集・削除
+    * グラフ表示
+* 食べ物
+    * 食べ物の記録・編集・削除
+* 掲示板
+    * 記事の投稿・編集・削除
+* タグ
+    * 記事とタグを登録
+    * タグ一覧ページ
+* いいね
+    * 
 
-* ...
+## :point_up: 工夫したポイント
+日々の体重の推移をビジュアルで分かりやすく見えるよう<br>
+JavaScriptのチャートライブラリである[Chart.js](https://www.chartjs.org/)を使用した点。
+
+## :pencil: 課題や今後実装したい機能
+
+
