@@ -16,25 +16,31 @@
     <%= render partial: 'layouts/flash' %>
 
     <header class="header">
-      <div class="header__bar row">
-        <div class="user_nav grid-6">
-          <%= link_to 'Top', users_path %>        
-        </div>
-        <div class="user_nav grid-6">
-          <%= link_to 'Record', weights_path %>
-        </div>
-        <div class="user_nav grid-6">
-          <%= link_to 'Diary', meals_path %>
-        </div>
-        <div class="user_nav grid-6">
-          <%= link_to 'Topics', topics_path %>
-        </div>
-        <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-          </div>
-        <% end %>
 
+      <div class="header__bar row">
+        <div class="header__logo row">
+            <h1>There is no lasting glory in rapid weight loss.
+            </h1>
+          </div>
+        <div class="header__contents">
+          <div class="user_nav grid-6">
+            <%= link_to 'Top', users_path %>        
+          </div>
+          <div class="user_nav grid-6">
+            <%= link_to 'Record', weights_path %>
+          </div>
+          <div class="user_nav grid-6">
+            <%= link_to 'Diary', meals_path %>
+          </div>
+          <div class="user_nav grid-6">
+            <%= link_to 'Topics', topics_path %>
+          </div>
+          <% if user_signed_in? %>
+            <div class="user_nav grid-6">
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </header>
 

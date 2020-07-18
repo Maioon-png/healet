@@ -7,9 +7,11 @@ header {
   background-color: lightgray;
 }
 
+
 .contents_top-index {
-  height: calc(100% - 30px);
+  // height: calc(100% - 30px);
   width: 100%;
+  height: 100%;
 }
 
 .signup, .login {

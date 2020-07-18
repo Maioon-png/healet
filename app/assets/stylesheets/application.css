@@ -16,11 +16,18 @@
  *= require_self
  */
 
- .header__bar {
+ .header__contents {
    display: flex;
    width: 100%;
+ 
+ }
+ .header__logo {
+  /* padding: 50px 0 15px; */
+  margin: 0 0 40px;
+  text-align: center;
  }
  .header__bar {
+  padding: 50px 0 15px;
    background-color: #FFFFCC;
    line-height: 40px;
    border-bottom: solid 1px #999900;
