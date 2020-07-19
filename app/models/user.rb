@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :meals
   has_many :topics
   has_many :comments
+  has_many :likes, dependent: :destroy
+  has_many :liked_topics, through: :likes, source: :topic
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
@@ -17,5 +19,5 @@ class User < ApplicationRecord
 
     end
   end
-
+  
 end

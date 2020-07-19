@@ -1,5 +1,7 @@
 <div class="contents_topic-index">
-
+  <div class="topic-menu">
+    <%= link_to 'お気に入り記事一覧', edit_weight_path(id: current_user.id), {class: "weight-edit"} %>
+  </div>
    <div class="record-icon">
     <%= link_to new_topic_path do %>
       <i class="far fa-comment-dots fa-2x"></i>
@@ -12,12 +14,15 @@
         <div class="topic-title">
           <p><%= link_to topic.title, topic_path(id: topic.id) %></p>
         </div>
-        <div class="topic-user-name">
-          <p><%= topic.user.name %>さん</p>
+        <div class="topic-data">
+          <div class="topic-user-name">
+            <%= topic.user.name %>さん
+          </div>
+          <div class="topic-date">
+            <%= topic.created_at.strftime('%Y-%m-%d') %>
+          </div>
+          <i class="fas fa-heart"></i>(<%= topic.like_users.count %>)  
         </div>
-        <div class="topic-date">
-          <p><%= topic.created_at.strftime('%Y-%m-%d') %></p>
-        </div>  
       </div>
     <% end %>
 

@@ -6,7 +6,25 @@ header {
 }
 * {
   box-sizing: border-box;
- }
+}
+.header__bar {
+  display: flex;
+  width: 100%;
+}
+.header__bar {
+  background-color: #FFFFCC;
+  line-height: 40px;
+  border-bottom: solid 1px #999900;
+}
+
+.user_nav {
+  width: calc(100% / 5);
+  text-align: center;
+}
+.user_nav a {
+  text-decoration: none;
+  color: #999900;
+}
 .contents_top-index {
   // height: calc(100% - 30px);
   background-image: url("diet1.jpg");

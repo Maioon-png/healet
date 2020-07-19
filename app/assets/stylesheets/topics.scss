@@ -19,8 +19,7 @@
   background-color: white;
 }
 .topic-title {
-  font-size: 18px;
-  
+  font-size: 18px;  
 }
 .topic-title a {
   text-decoration: none; 
@@ -28,15 +27,23 @@
 }
 .topic-user-name {
   font-size: 15px;
-  width: 100%;
   text-align: right;
   color: #555555;
+  margin-right: 8px;
 }
 .topic-date {
   font-size: 15px;
-  width: 100px;
-  margin: 0 0 0 auto;
+  text-align: right;
   color: #555555;
+  margin-right: 5px;
+
+}
+.topic-data {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  justify-content: flex-end;
+  padding-right: 10px;
 }
 // showページ
 .contents_topic-show {
@@ -91,6 +98,7 @@
   margin: 0 auto;
   width: 500px;
 }
+
 // newページ
 .post-topic {
   height: 100%;
@@ -99,6 +107,16 @@
 .topic-form {
   margin: 0 auto;
   width: 500px;
+  margin-top: 30px;
+}
+// いいねフォーム
+.fa-heart {
+margin-right: 3px;
+}
+button {
+  border: none;
+  outline: none; 
+  background: transparent; 
   padding-top: 30px;
 }
 #topic_title {

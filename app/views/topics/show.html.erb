@@ -28,6 +28,9 @@
         </ul>
       <% end %>
     </div>
+    <div class="topic-like" id="topic-<%= @topic.id %>" data-topic-id="<%= @topic.id %>">
+      <%= render "likes/like", topic: @topic %>
+    </div>
   </div>
 
 

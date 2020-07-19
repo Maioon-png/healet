@@ -1,0 +1,7 @@
+<% if current_user.liked_topics.length != 0 %>
+  <% current_user.liked_topics.each do |topic| %>
+    <%= topic.user.titlel %>
+  <% end %>
+<% else %>
+ お気に入り記事はありません。
+<% end %>
