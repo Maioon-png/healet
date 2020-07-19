@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :meals, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :topics, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: :create
+    resources :likes, only: [:index, :create, :destroy]
   end
   resources :tags, only: [:index, :show]
-  resources :likes, only: [:create, :destroy]
+ 
 
 end

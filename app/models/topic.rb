@@ -6,11 +6,14 @@ class Topic < ApplicationRecord
   has_many :topics_tags
   has_many :tags, through: :topics_tags
   has_many :likes, dependent: :destroy
+  has_many :like_users, through: :likes, source: :user
+
 
   def save_tags(tags)
     current_tags = self.tags.pluck(:name) unless self.tags.nil?
     old_tags = current_tags - tags
     new_tags = tags - current_tags
+
 
     # Destroy old taggings:
     old_tags.each do |old_name|
@@ -33,6 +36,10 @@ class Topic < ApplicationRecord
 
   def delete_like(user)
     likes.find_by(user_id: user.id).destroy
+  end
+
+  def already_liked?(user)
+    like_users.include?(user)
   end
 
 end

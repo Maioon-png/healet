@@ -13,7 +13,11 @@
       </div>
     </div>
     <div class="left-bottom-box">
-      <p>目標まで -<%= (@latest_waight.weight - @user.target_weight) %><span style="font-size:10px;">Kg</span></p>
+      <% if @latest_weight %>
+        <p>目標まで -<%= (@latest_waight.weight - @user.target_weight) %><span style="font-size:10px;">Kg</span></p>
+      <% else %>
+        <p>目標まで -<%= (@user.start_weight - @user.target_weight) %><span style="font-size:10px;">Kg</span></p>
+      <% end %>
     </div>
 
   </div>
@@ -32,12 +36,16 @@
       <h2>現在</h2>
     </div>
     <div class="user-weight right-bottom-box">
-      <h1><%= @latest_waight.weight %><span style="font-size:20px;">Kg</span></h2>
-        <div class="top-content-icon">
-        <%= link_to new_weight_path do %>
-         <i class="fas fa-weight"></i>
-        <% end %>
-       </div>
+      <% if @latest_weight %>
+        <h1><%= @latest_waight.weight %><span style="font-size:20px;">Kg</span></h2>
+      <% else %>
+        <h1><%= @user.start_weight %><span style="font-size:20px;">Kg</span></h2>
+      <% end %>
+          <div class="top-content-icon">
+          <%= link_to new_weight_path do %>
+          <i class="fas fa-weight"></i>
+          <% end %>
+        </div>
     </div>
     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>

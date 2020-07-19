@@ -1,0 +1,16 @@
+<% if current_user != topic.user %>
+  <span class="like">
+  <% if topic.already_liked?(current_user) %>
+    <%= button_to topic_like_path(topic.id, topic.likes.ids), method: :delete, remote: true do %>
+      <i class="fas fa-heart"></i>(<%= topic.like_users.count %>)
+      <div><%= hidden_field_tag :topic_id, topic.id %></div>
+    <% end %>
+
+  <% else %>
+    <%= button_to topic_likes_path(topic), id: topic.id, remote: true do %>
+      <i class="far fa-heart"></i>(<%= topic.like_users.count %>)
+      <div><%= hidden_field_tag :topic_id, topic.id %></div>
+    <% end %>
+  <% end %>
+  </span>
+<% end %>

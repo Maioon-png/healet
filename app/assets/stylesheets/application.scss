@@ -1,0 +1,31 @@
+@import "users";
+@import "flash";
+@import "jquery.tagit";
+@import "meals";
+@import "registrations";
+@import "reset";
+@import "tagit.ui-zendesk";
+@import "tags";
+@import "top";
+@import "topics";
+@import "weights";
+@import "bootstrap";
+
+ .header__bar {
+   display: flex;
+   width: 100%;
+ }
+ .header__bar {
+   background-color: #FFFFCC;
+   line-height: 40px;
+   border-bottom: solid 1px #999900;
+ }
+
+.user_nav {
+  width: calc(100% / 5);
+  text-align: center;
+}
+.user_nav a {
+   text-decoration: none;
+   color: #999900;
+ }
