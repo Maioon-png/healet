@@ -1,51 +1,55 @@
 <div class="contents_meal-index">
-
-   <div class="record-icon">
+  <div class="record-icon">
     <%= link_to new_meal_path do %>
       <i class="fas fa-hamburger fa-2x"></i>
     <% end %>
   </div>
 
   <div class="meals">
-    <% @meals.each do |meal| %>
-      <div class="meal">
-        <div class="date">
-          <p><%= meal.recorded_date.strftime("%Y年%-m月%-d日") %>の食事</p>
-        </div> 
-        <div class="menu">
-          <% unless meal.morning.blank? %>
-            <div class="morning">
-              <h2>あさ</h2>
-              <p><%= meal.morning %></p>
-            </div>
-          <% end %>
-          <% unless meal.lunch.blank? %>
-            <div class="lunch">
-              <h2>ひる</h2>
-              <p><%= meal.lunch %></p>
-            </div>
-          <% end %>
-          <% unless meal.dinner.blank? %>
-            <div class="dinner">
-              <h2>よる</h2>
-              <p><%= meal.dinner %></p>
-            </div>
-          <% end %>
-          <% unless meal.other.blank? %>
-            <div class="other">
-              <h2>そのた</h2>
-              <p><%= meal.other %></p>
-            </div>
-          <% end %>
-        </div>
-         
-        <div class="edit">
-          <%= link_to '編集', edit_meal_path(id: meal.id) %>
-          <%= link_to '削除', meal_path(id: meal.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
-        </div>
+    <% if @meals.empty? %>
+      <div class="no-meal-msg">
+        <p>食べたものを記録してみましょう。</p>
       </div>
+    <% else %>
+      <% @meals.each do |meal| %>
+        <div class="meal">
+          <div class="date">
+            <p><%= meal.recorded_date.strftime("%Y年%-m月%-d日") %>の食事</p>
+          </div> 
+          <div class="menu">
+            <% unless meal.morning.blank? %>
+              <div class="morning">
+                <h2>あさ</h2>
+                <p><%= meal.morning %></p>
+              </div>
+            <% end %>
+            <% unless meal.lunch.blank? %>
+              <div class="lunch">
+                <h2>ひる</h2>
+                <p><%= meal.lunch %></p>
+              </div>
+            <% end %>
+            <% unless meal.dinner.blank? %>
+              <div class="dinner">
+                <h2>よる</h2>
+                <p><%= meal.dinner %></p>
+              </div>
+            <% end %>
+            <% unless meal.other.blank? %>
+              <div class="other">
+                <h2>そのた</h2>
+                <p><%= meal.other %></p>
+              </div>
+            <% end %>
+          </div>
+          
+          <div class="edit">
+            <%= link_to '編集', edit_meal_path(id: meal.id) %>
+            <%= link_to '削除', meal_path(id: meal.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+          </div>
+        </div>
+      <% end %> 
     <% end %>
-
   </div>
   <%= paginate(@meals) %>
 </div>

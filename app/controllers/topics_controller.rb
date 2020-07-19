@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   before_action :move_to_index
 
   def index
-    @topics = Topic.all.order("created_at DESC").page(params[:page]).per(10)
+    @topics = Topic.all.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new
