@@ -1,6 +1,9 @@
 .ui-helper-hidden-accessible {
   display: none;
 }
+.contents_topic-index {
+  background-color: #e6e6e6;
+}
 .fa-comment-dots {
   text-decoration: none;
   color: #999900;
@@ -8,10 +11,11 @@
 .topic {
   margin: 0 auto;
   width: 500px;
-  border: solid 5px #CCCC00;
+  border: solid 1px #CCCC00;
   border-radius: 8px;
   margin-bottom: 30px;
   padding: 10px 0 10px 10px;
+  background-color: white;
 }
 .topic-title {
   font-size: 18px;
@@ -34,8 +38,13 @@
   color: #555555;
 }
 // showページ
-.show-topic {
-  margin-top: 30px;
+.contents_topic-show {
+  background-color: #e6e6e6;
+  padding-top: 30px;
+  height: 100%;
+}
+.topic-content {
+  margin: 30px 10px;
 }
 .topic-edit {
   font-size: 15px;
@@ -71,14 +80,25 @@
   border: solid 1px #CCCC00;
   border-radius: 8px;
   margin-bottom: 30px;
+  background-color: white;
 }
 .comment-form {
   margin: 0 auto;
   width: 500px;
 }
 // newページ
+.post-topic {
+  height: 100%;
+  background-color: #e6e6e6;
+}
 .topic-form {
   margin: 0 auto;
   width: 500px;
-  margin-top: 30px;
+  padding-top: 30px;
+}
+#topic_title {
+  width: 100%;
+}
+#topic_title, #topic_content, #topic-tags {
+  margin-bottom: 30px;
 }

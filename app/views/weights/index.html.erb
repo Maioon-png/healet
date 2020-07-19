@@ -4,67 +4,67 @@
       <i class="fas fa-weight fa-2x"></i>
     <% end %>
   </div>
+  <div class="contents_weight-main">
+    <div class="weight-grah">
+      <canvas id="myChart" width="400" height="400"></canvas>
+        <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: <%= @dates.to_json.html_safe %>,
+                datasets: [{
+                    label: '# of Weights',
+                    data: <%= @weights %>,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            stepSize: 01,
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+    </div>
 
-  <div class="weight-grah">
-    <canvas id="myChart" width="400" height="400"></canvas>
-      <script>
-      var ctx = document.getElementById('myChart').getContext('2d');
-      var myChart = new Chart(ctx, {
-          type: 'line',
-          data: {
-              labels: <%= @dates.to_json.html_safe %>,
-              datasets: [{
-                  label: '# of Weights',
-                  data: <%= @weights %>,
-                  backgroundColor: [
-                      'rgba(255, 99, 132, 0.2)',
-                      'rgba(54, 162, 235, 0.2)',
-                      'rgba(255, 206, 86, 0.2)',
-                      'rgba(75, 192, 192, 0.2)',
-                      'rgba(153, 102, 255, 0.2)',
-                      'rgba(255, 159, 64, 0.2)'
-                  ],
-                  borderColor: [
-                      'rgba(255, 99, 132, 1)',
-                      'rgba(54, 162, 235, 1)',
-                      'rgba(255, 206, 86, 1)',
-                      'rgba(75, 192, 192, 1)',
-                      'rgba(153, 102, 255, 1)',
-                      'rgba(255, 159, 64, 1)'
-                  ],
-                  borderWidth: 1
-              }]
-          },
-          options: {
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          stepSize: 01,
-                      }
-                  }]
-              }
-          }
-      });
-      </script>
+    <div class="weight-table">
+      <table>
+        <tr>
+          <th>Date</th><th>Weight</th><th>Edit</th>
+        </tr>
+        <% @user_datas.each do |d| %>
+        <tr>
+          <td><%= d.recorded_date.strftime('%Y-%m-%d') %></td>
+          <td><%= d.weight %> kg</td>
+          <td>
+            <%= link_to '編集', edit_weight_path(id: d.id), {class: "weight-edit"} %>/
+            <%= link_to('削除', weight_path(id: d.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "weight-edit") %>
+          </td>
+        </tr>
+        <% end %>
+      </table>        
+    </div>
   </div>
-
-  <div class="weight-table">
-    <table>
-      <tr>
-        <th>Date</th><th>Weight</th><th>Edit</th>
-      </tr>
-      <% @user_datas.each do |d| %>
-      <tr>
-        <td><%= d.recorded_date.strftime('%Y-%m-%d') %></td>
-        <td><%= d.weight %> kg</td>
-        <td>
-          <%= link_to '編集', edit_weight_path(id: d.id), {class: "weight-edit"} %>/
-          <%= link_to('削除', weight_path(id: d.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "weight-edit") %>
-        </td>
-      </tr>
-      <% end %>
-    </table>        
-  </div>
-
   </div>
 </div>  
