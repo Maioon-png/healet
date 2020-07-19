@@ -1,5 +1,5 @@
-<div class="top-contents">
-
+<div class="top-contents_index">
+  <div class="top-contents">
   <div class="top-content content-left">
     <div class="top-box left-top-box">
       <h2>目標</h2>
@@ -13,33 +13,39 @@
       </div>
     </div>
     <div class="left-bottom-box">
-      <p>目標まで -<%= (@latest_waight.weight - @user.target_weight) %><span style="font-size:10px;">Kg</span></p>
+      <% if @latest_waight %>
+        <p>目標まで -<%= (@latest_waight.weight - @user.target_weight) %><span style="font-size:10px;">Kg</span></p>
+      <% end %>
     </div>
 
   </div>
 
-  <div class="top-content content-center">
-    <div class="top-box center-top-box">
-      <h2><%= @user.name %></h2>
+    <div class="top-content content-center">
+      <div class="top-box center-top-box">
+        <h2><%= @user.name %></h2>
+      </div>
+      <div class="center-bottom-box">
+        <%= embedded_svg("icon1.svg", class: "icon-svg") %>
+      </div>
     </div>
-    <div class="center-bottom-box">
-      <%= embedded_svg("icon1.svg", class: "icon-svg") %>
-    </div>
-  </div>
 
-  <div class="top-content content-right">
-    <div class="top-box right-top-box">
-      <h2>現在</h2>
-    </div>
-    <div class="user-weight right-bottom-box">
-      <h1><%= @latest_waight.weight %><span style="font-size:20px;">Kg</span></h2>
-        <div class="top-content-icon">
-        <%= link_to new_weight_path do %>
-         <i class="fas fa-weight"></i>
+    <div class="top-content content-right">
+      <div class="top-box right-top-box">
+        <h2>現在</h2>
+      </div>
+      <div class="user-weight right-bottom-box">
+        <% if @latest_waight %>
+          <h1><%= @latest_waight.weight %><span style="font-size:20px;">Kg</span></h2>
+        <% else %>
+          <p>RECORDから体重を記録してみよう！</p>
         <% end %>
-       </div>
+          <div class="top-content-icon">
+          <%= link_to new_weight_path do %>
+            <i class="fas fa-weight"></i>
+          <% end %>
+          </div>
+      </div>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
-
 </div>

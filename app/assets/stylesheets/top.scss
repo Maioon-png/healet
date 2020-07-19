@@ -2,12 +2,11 @@ html, body {
   height: 100%;
 }
 header {
-
   width: 100%;
-  // background-color: lightgray;
 }
-
-
+* {
+  box-sizing: border-box;
+ }
 .contents_top-index {
   // height: calc(100% - 30px);
   background-image: url("diet1.jpg");
@@ -22,7 +21,6 @@ header {
   padding-top: 150px;
 }
 .signup, .login {
-  // margin: 0 auto;
   width: 200px;
   border-radius: 5px;
   padding: 10px; 
@@ -33,8 +31,6 @@ header {
   margin-right: 50px;
 }
 .signup a, .login a {
-  // text-decoration: none; 
-  // color: white;
   color: #FFF;
   display: inline-block;
   font-size: 16px;
@@ -51,17 +47,10 @@ header {
   text-shadow: none;
   transition: all 1.2s cubic-bezier(0.2, 1, 0.2, 1);
 }
-
 .signup a:hover, .login a:hover {
   border-color: #FFF;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
   outline-color: transparent;
   outline-offset: 12px;
   text-shadow: 2px 2px 3px #000;
-}
-
-footer {
-  height: 30px;
-  width: 100%;
-  background-color: lightgreen;
 }
