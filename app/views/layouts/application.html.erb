@@ -41,6 +41,11 @@
               <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
             </div>
           <% end %>
+          <% unless user_signed_in? %>
+            <div class="user_nav grid-6">
+              <%= link_to '簡単ログイン(閲覧用)', users_guest_sign_in_path, method: :post %>
+            </div>
+          <% end %>
         </ul>
       </div>
     </header>
