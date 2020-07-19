@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/c1f80ad41b.js" crossorigin="anonymous"></script>
     <%# <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> %>
+    
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
  
@@ -22,25 +23,25 @@
             <h1>There is no lasting glory in rapid weight loss.
             </h1>
           </div>
-        <div class="header__contents">
-          <div class="user_nav grid-6">
-            <%= link_to 'Top', users_path %>        
-          </div>
-          <div class="user_nav grid-6">
-            <%= link_to 'Record', weights_path %>
-          </div>
-          <div class="user_nav grid-6">
-            <%= link_to 'Diary', meals_path %>
-          </div>
-          <div class="user_nav grid-6">
-            <%= link_to 'Topics', topics_path %>
-          </div>
+        <ul class="header__contents">
+          <li class="user_nav grid-6">
+            <%= link_to 'TOP', users_path %>        
+          </li>
+          <li class="user_nav grid-6">
+            <%= link_to 'RECORD', weights_path %>
+          </li>
+          <li class="user_nav grid-6">
+            <%= link_to 'DIARY', meals_path %>
+          </li>
+          <li class="user_nav grid-6">
+            <%= link_to 'TOPICS', topics_path %>
+          </li>
           <% if user_signed_in? %>
             <div class="user_nav grid-6">
-              <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+              <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
             </div>
           <% end %>
-        </div>
+        </ul>
       </div>
     </header>
 

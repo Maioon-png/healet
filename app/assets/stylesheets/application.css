@@ -15,29 +15,53 @@
  *= require tagit.ui-zendesk
  *= require_self
  */
-
+ @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100;200&display=swap');
+ 
  .header__contents {
    display: flex;
+   justify-content: center;
    width: 100%;
+   list-style: none;
  
  }
  .header__logo {
   /* padding: 50px 0 15px; */
   margin: 0 0 40px;
   text-align: center;
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
  }
  .header__bar {
-  padding: 50px 0 15px;
-   background-color: #FFFFCC;
+  padding: 50px 0 5px;
+   /* background-color: #FFFFCC; */
    line-height: 40px;
    border-bottom: solid 1px #999900;
  }
 
 .user_nav {
-  width: calc(100% / 5);
+  text-decoration: none;
   text-align: center;
+  padding: 0px 22px 2px 23px;
+  color: #325a3c;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  display:inline;
 }
 .user_nav a {
-   text-decoration: none;
-   color: #999900;
- }
+   /* text-decoration: none;
+   color: #999900; */
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  font-size: 16px;
+  color: #999900;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0px 20px;
+  transition: .4s;
+}
+.user_nav a:hover {
+  background-color: #474943;
+  color: #FFF;
+}
