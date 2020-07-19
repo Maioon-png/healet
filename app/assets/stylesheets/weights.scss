@@ -2,22 +2,26 @@
   text-align: center;
   padding: 30px 0;
 }
-
+.weight-table{
+  height: 500px;
+  overflow: scroll;
+}
 table {
-  width: 500px;
+  margin: 0 auto;
+  width: 400px;
   text-align: center;
   border: solid １px #b6b6a6;
 }
 
 table th{
-  padding: 10px;
+  padding: 5px;
   border: solid  1px #b6b6a6;
   background: #f1f1f1;
   color: #b6b6a6;
 }
 
 table td {
-  padding: 10px;
+  padding: 7px;
   border: solid 1px #b6b6a6;
   color: #999999;
   background: #f1f1f1;
@@ -25,6 +29,7 @@ table td {
 
 .contents_weight-index {
   align-content: center;
+  height: 100%;
   background-color: #e6e6e6;
 }
 .contents_weight-main {

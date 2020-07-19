@@ -2,6 +2,7 @@
   background-image: url(diet2.jpg);
   background-position: center;
   background-size: cover;
+  height: 100%;
 }
 .user-form {
   margin: 0 auto;
@@ -30,9 +31,6 @@
   left: -35px;
 }
 
-input {
-
-}
 input[type='email'], input[type='password'], input[type='number'], input[type='text'] {
   // border-radius: 5px;
   // border: 1px solid #ccc;
@@ -112,6 +110,7 @@ input[type=submit]:focus{
   background-image: url(diet2.jpg);
   background-position: center;
   background-size: cover;
+  height: 100%;
 }
 .password-rememberable {
   color: white;
