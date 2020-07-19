@@ -1,6 +1,6 @@
 <div class="contents_topic-index">
   <div class="topic-menu">
-    <%= link_to 'お気に入り記事一覧', edit_weight_path(id: d.id), {class: "weight-edit"} %>
+    <%= link_to 'お気に入り記事一覧', edit_weight_path(id: current_user.id), {class: "weight-edit"} %>
   </div>
    <div class="record-icon">
     <%= link_to new_topic_path do %>
