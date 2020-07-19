@@ -6,40 +6,39 @@
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="user-inform">
         <div class="field">
-          <%= f.label :email %><br />
+          <%= f.label :email, {class: 'user-label'} %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
         <div class="field">
-          <%= f.label "おなまえ" %><br />
+          <%= f.label "おなまえ", {class: 'user-label'} %><br />
           <%= f.text_field :name, autofocus: true, maxlength: "6", size: 20 %>
         </div>
 
         <div class="field">
-          <%= f.label "現在の体重" %><br />
-          <%= f.number_field :start_weight, step: "0.1", min: 0, max: 999 %> Kg
+          <%= f.label "現在の体重", {class: 'user-label'} %><br />
+          <%= f.number_field :start_weight, step: "0.1", min: 0, max: 999, placeholder: "Kg" %>
         </div>
 
         <div class="field">
-          <%= f.label "目標体重" %><br />
-          <%= f.number_field :target_weight, step: "0.1", min: 0, max: 999 %> Kg
+          <%= f.label "目標体重", {class: 'user-label'} %><br />
+          <%= f.number_field :target_weight, step: "0.1", min: 0, max: 999, placeholder: "Kg" %>
         </div>
 
         <div class="field">
-          <%= f.label :password %>
+          <%= f.label :password, {class: 'user-label'} %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %><br />
+          <%= f.label :password_confirmation, {class: 'user-label_password_confirmation'} %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
       </div>
     
-      <div class="actions">
+      <div class="actions user-from_btn">
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
