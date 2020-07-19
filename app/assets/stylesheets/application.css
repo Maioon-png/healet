@@ -18,6 +18,7 @@
  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100;200&display=swap');
  
+ 
  .header__contents {
    display: flex;
    justify-content: center;
@@ -49,15 +50,11 @@
   display:inline;
 }
 .user_nav a {
-   /* text-decoration: none;
-   color: #999900; */
   display: inline-block;
-  max-width: 180px;
   text-align: left;
   font-size: 16px;
   color: #999900;
   text-decoration: none;
-  font-weight: bold;
   padding: 0px 20px;
   transition: .4s;
 }

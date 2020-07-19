@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   before_action :move_to_index
 
   def index
-    @topics = Topic.all.order("created_at DESC").page(params[:page]).per(10)
+    @topics = Topic.all.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new
@@ -12,7 +12,9 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.create(topic_params)
-    tag_list = params[:tags].join(",")
+  
+    tag_list = params[:tags].split(",")
+
     if @topic.save
       @topic.save_tags(tag_list)
       redirect_to topics_path

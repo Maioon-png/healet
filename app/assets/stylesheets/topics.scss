@@ -3,6 +3,7 @@
 }
 .contents_topic-index {
   background-color: #e6e6e6;
+  height: 100%;
 }
 .fa-comment-dots {
   text-decoration: none;
@@ -14,7 +15,7 @@
   border: solid 1px #CCCC00;
   border-radius: 8px;
   margin-bottom: 30px;
-  padding: 10px 0 10px 10px;
+  padding: 10px 10px 10px 10px;
   background-color: white;
 }
 .topic-title {
@@ -27,8 +28,8 @@
 }
 .topic-user-name {
   font-size: 15px;
-  width: 100px;
-  margin: 0 0 0 auto;
+  width: 100%;
+  text-align: right;
   color: #555555;
 }
 .topic-date {
@@ -41,10 +42,13 @@
 .contents_topic-show {
   background-color: #e6e6e6;
   padding-top: 30px;
-  height: 100%;
+
 }
 .topic-content {
   margin: 30px 10px;
+}
+.topic-content p {
+  white-space: pre-wrap;
 }
 .topic-edit {
   font-size: 15px;
@@ -59,6 +63,7 @@
 .topic-tag ul {
   list-style: none;
   display: flex;
+  padding: 0 0 10px 10px;
 }
 .topic-tag li {
   margin-right: 3px;

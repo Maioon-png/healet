@@ -1,5 +1,7 @@
 .contents_meal-index {
   background-color: #e6e6e6;
+  height: 100%;
+  overflow: scroll;
 }
 .meal {
   margin: 0 auto;
@@ -84,4 +86,7 @@ input[type='text'] {
 .current {
   color: #999900;
   font-weight: bold;
+}
+.no-meal-msg {
+  text-align: center;
 }
