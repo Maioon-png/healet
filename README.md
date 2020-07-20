@@ -1,7 +1,7 @@
-# :cake: :fries: ダイエットアプリ :fork_and_knife: :pizza:
+# :cake: :fries: Healet :fork_and_knife: :pizza:
 
 体重、食べた物を記録したり、<br>
-他のユーザーとダイエットや美容に関して情報をシェア出来るアプリです。
+他のユーザーとダイエットや健康・美容に関して情報をシェア出来るアプリです。
 <br>
 <br>
 
@@ -13,12 +13,15 @@
 <br>
 
 ## :globe_with_meridians: URL
-〜デプロイしたら載せます〜
+http://54.249.220.113/
 <br>
 <br>
 
 ## :eyes: DEMO
-〜画像載せる〜
+<img src="https://user-images.githubusercontent.com/61342566/87900728-2ac6e280-ca90-11ea-832c-98026aeac5ec.png" width=70%>
+<img src="https://user-images.githubusercontent.com/61342566/87900730-2dc1d300-ca90-11ea-868b-e768e1bbfc49.png" width=70%>
+<img src="https://user-images.githubusercontent.com/61342566/87900837-711c4180-ca90-11ea-91a8-8b7c89ade21a.png" width=70%>
+<img src="https://user-images.githubusercontent.com/61342566/87900838-72e60500-ca90-11ea-95ae-5ff42138db60.png" width=70%>
 <br>
 <br>
 
@@ -35,6 +38,12 @@
 
 ### インフラストラクチャー
 * Mysql
+* Nginx
+* AWS
+    - CloudWatch
+    - EC2
+    - RDS
+    - VPC
 
 ## 機能一覧
 
@@ -54,9 +63,13 @@
     
 
 ## :point_up: 工夫したポイント
-日々の体重の推移をビジュアルで分かりやすく見えるよう<br>
-JavaScriptのチャートライブラリである[Chart.js](https://www.chartjs.org/)を使用した点。
+JavaScriptのチャートライブラリである[Chart.js](https://www.chartjs.org/)を使用。
 
 ## :pencil: 課題や今後実装したい機能
+・UIの部分をよりユーザーが快適に使えるようにいくつか修正したい。<br>
+例：<br>
+- 体重や食事記録投稿はページ遷移せずモーダルウィンドウが出てきて投稿出来るようにする。<br>
+- グラフの表示をplugin等を使用し、もう少し工夫してより使いやすくしたいです。<br>
+
 
 
