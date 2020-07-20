@@ -67,4 +67,4 @@ gem 'chart-js-rails'
 gem 'pry-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
-gem 'bootstrap', '~> 4.4.1'
+
