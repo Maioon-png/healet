@@ -63,9 +63,10 @@ http://54.249.220.113/
     * いいね一覧ページ
 
 ## :point_up: 工夫したポイント
-今まで使用したことのないgemやライブラリを積極的に使用。
+今まで使用したことのないgemやプラグインを積極的に使用。
 - JavaScriptのチャートライブラリである[Chart.js](https://www.chartjs.org/)を使用。
-- タグのフロントエンド部分は、jQueryプラグインである[tag-it](https://github.com/aehlke/tag-itを使用。
+- タグのフロントエンド部分は、jQueryプラグイン[tag-it](https://github.com/aehlke/tag-it）を使用。
+- トップページの背景画像スライドショー機能は、jQueryプラグイン[bgswitcher](https://github.com/rewish/jquery-bgswitcher)を使用。
 
 ## :pencil: 課題や今後実装したい機能
 ・UIの部分をよりユーザーが快適に使えるようにいくつか修正したい。<br>
