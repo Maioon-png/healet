@@ -1,3 +1,26 @@
-// Place all the styles related to the Likes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// お気に入り一覧
+.like-show {
+  background-color: #e6e6e6;
+  height: 100%;
+}
+.like-show_contents {
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+}
+.like-show_logo{
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+.like-show_titles {
+  list-style: none;
+}
+.like-show_titles li {
+  margin-bottom: 10px;
+}
+
+.like-show_titles a {
+  text-decoration: none;
+  color: #999900;
+}

@@ -1,8 +1,5 @@
 class LikesController < ApplicationController
 
-  def index
-  end
-
   def create
     @topic = Topic.find(params[:topic_id]) 
     unless @topic.already_liked?(current_user)

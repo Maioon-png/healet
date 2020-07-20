@@ -1,0 +1,18 @@
+<div class="like-show">
+  <div class="like-show_contents">
+    <% if current_user.liked_topics.length != 0 %>
+      <div class="like-show_logo">
+        あなたのお気に入りTOPICS
+      </div>
+      <ul class="like-show_titles">
+        <% current_user.liked_topics.each do |topic| %>
+          <li>
+            <%= link_to topic.title, topic_path(topic.id) %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      お気に入りTOPICSはありません。
+    <% end %>
+  </div>
+</div>

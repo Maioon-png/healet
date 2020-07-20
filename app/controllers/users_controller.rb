@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @latest_waight = @weights.last
   end
 
+  def show
+    
+  end
+
   private
 
   def move_to_index
