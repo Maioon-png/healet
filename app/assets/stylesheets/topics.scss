@@ -4,6 +4,7 @@
 .contents_topic-index {
   background-color: #e6e6e6;
   height: 100%;
+  overflow: scroll;
 }
 .fa-comment-dots {
   text-decoration: none;
@@ -18,8 +19,8 @@
   padding: 10px 10px 10px 10px;
   background-color: white;
 }
-.topic-title {
-  font-size: 18px;  
+.topic-title h1{
+  font-size: 20px;  
 }
 .topic-title a {
   text-decoration: none; 
@@ -49,7 +50,7 @@
 .contents_topic-show {
   background-color: #e6e6e6;
   padding-top: 30px;
-
+  height: 100%;
 }
 .topic-content {
   margin: 30px 10px;
@@ -107,7 +108,7 @@
 .topic-form {
   margin: 0 auto;
   width: 500px;
-  margin-top: 30px;
+  padding-top: 30px;
 }
 // いいねフォーム
 .fa-heart {
@@ -117,7 +118,6 @@ button {
   border: none;
   outline: none; 
   background: transparent; 
-  padding-top: 30px;
 }
 #topic_title {
   width: 100%;
