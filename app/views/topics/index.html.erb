@@ -2,7 +2,13 @@
   <div class="topic-menu">
     <%= link_to 'お気に入りTOPIC一覧', user_path(current_user.id), {class: "weight-edit"} %>
   </div>
-   <div class="record-icon">
+  <div class="topic-search">
+    <%= form_with(url: search_topics_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "TOPICSを検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+  </div>
+  <div class="record-icon">
     <%= link_to new_topic_path do %>
       <i class="far fa-comment-dots fa-2x"></i>
     <% end %>
