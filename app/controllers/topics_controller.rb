@@ -48,6 +48,10 @@ class TopicsController < ApplicationController
     redirect_to topics_path
   end
 
+  def search
+    @topics = Topic.search(params[:keyword])
+  end
+
   private
   def topic_params
     params.require(:topic).permit(:title, :content).merge(user_id: current_user.id)
