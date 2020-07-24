@@ -1,5 +1,32 @@
-<div class="topics">
-  <% @topics.each do |topic| %>
-    <%= render partial: "topic", locals: { topic: topic } %>
-  <% end %>
+<div class="contents_topic-index">
+  <div class="topic_menu">
+    <ul class="topic_icons">
+      <li>
+        <%= link_to new_topic_path do %>
+          <i class="far fa-comment-dots"></i>
+        <% end %>
+      </li>
+      <li class="topic-search-icon"> 
+        <i class="fas fa-search-plus"></i>
+      </li>
+      <li>
+        <%= link_to user_path(current_user.id) do %>
+          <i class="fas fa-heart topic-heart-icon"></i>
+        <% end %>
+      <li>
+    </ul>
+  </div>
+
+  <div class="topic-search">
+    <%= form_with(url: search_topics_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "TOPICSを検索する", class: "search-input", id: "topic-search-input" %>
+      <%= form.submit "検索", class: "search-btn", id: "topic-search-btn" %>
+    <% end %>
+  </div>
+
+  <div class="topics">
+    <% @topics.each do |topic| %>
+      <%= render partial: "topic", locals: { topic: topic } %>
+    <% end %>
+  </div>
 </div>

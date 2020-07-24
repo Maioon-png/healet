@@ -1,16 +1,28 @@
 <div class="contents_topic-index">
-  <div class="topic-menu">
-    <%= link_to 'お気に入りTOPIC一覧', user_path(current_user.id), {class: "weight-edit"} %>
+  <div class="topic_menu">
+    <ul class="topic_icons">
+      <li>
+        <%= link_to new_topic_path do %>
+          <i class="far fa-comment-dots"></i>
+        <% end %>
+      </li>
+      <li class="topic-search-icon">
+        
+        <i class="fas fa-search-plus"></i>
+  
+      </li>
+      <li>
+        <%= link_to user_path(current_user.id) do %>
+          <i class="fas fa-heart topic-heart-icon"></i>
+        <% end %>
+      </li>
+    </ul>
   </div>
+
   <div class="topic-search">
     <%= form_with(url: search_topics_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "TOPICSを検索する", class: "search-input" %>
-      <%= form.submit "検索", class: "search-btn" %>
-    <% end %>
-  </div>
-  <div class="record-icon">
-    <%= link_to new_topic_path do %>
-      <i class="far fa-comment-dots fa-2x"></i>
+      <%= form.text_field :keyword, placeholder: "TOPICSを検索する", class: "search-input", id: "topic-search-input" %>
+      <%= form.submit "検索", class: "search-btn", id: "topic-search-btn" %>
     <% end %>
   </div>
 
@@ -21,3 +33,9 @@
   </div>
   <%= paginate(@topics) %>
 </div>
+<%# 検索フォーム %>
+<script>
+  $('.topic-search-icon').click(function() {
+        $('.topic-search').toggle();
+    })
+</script>
