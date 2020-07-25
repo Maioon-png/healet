@@ -25,14 +25,23 @@
   </div>
 
   <div class="topics">
-    <% if @topics.length === 0%>
-      <div class="no-match-word">
+    <% if @topics.length === 0 %>
+      <div class="topic-search-result">
         " <%= @keyword %> "にヒットする記事はありませんでした。
       </div>
     <% else %>
+      <div class="topic-search-result">
+        <%= @topics.length %>件ヒットしました。
+      </div>
       <% @topics.each do |topic| %>
         <%= render partial: "topic", locals: { topic: topic } %>
       <% end %>
     <% end %>
   </div>
 </div>
+
+<script>
+  $('.topic-search-icon').click(function() {
+        $('.topic-search').toggle();
+    })
+</script>
