@@ -5,14 +5,11 @@
   background-color: #e6e6e6;
   height: 100%;
   overflow: scroll;
-}
-.fa-comment-dots {
-  text-decoration: none;
-  color: #999900;
+  position: relative;
 }
 .topic {
   margin: 0 auto;
-  width: 500px;
+  width: 450px;
   border: solid 1px #CCCC00;
   border-radius: 8px;
   margin-bottom: 30px;
@@ -102,6 +99,43 @@
 .topic-menu {
   padding: 10px 0 0 10px;
 }
+// メニュー
+.topic_icons {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 30px 0 30px 20px;
+}
+.topic_icons li {
+  margin-right: 15px;
+  
+}
+.fa-comment-dots {
+  text-decoration: none;
+  color: #999900;
+  transition: all 0.6s ease 0s;
+}
+.fa-comment-dots:hover {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+}
+.fa-search-plus {
+  color: #999900;
+  transition: all 0.6s ease 0s;
+}
+.fa-search-plus:hover {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+}
+.topic-heart-icon {
+  text-decoration: none;
+  color: #999900;
+  transition: all 0.6s ease 0s;
+}
+.topic-heart-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+}
 
 // newページ
 .post-topic {
@@ -127,4 +161,22 @@ button {
 }
 #topic_title, #topic_content, #topic-tags {
   margin-bottom: 30px;
+}
+// 検索結果
+.no-match-word {
+  text-align: center;
+}
+.topic-search {
+  display: none;
+  padding: 5px;
+  border: solid 1px White;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+#topic-search-input {
+  width: 200px;
+}
+#topic-search-btn {
+  width: 200px;
 }

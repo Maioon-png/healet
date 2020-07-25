@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: :create
     resources :likes, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
   resources :tags, only: [:index, :show]
  

@@ -8,6 +8,10 @@ class Topic < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
 
+  def self.search(search)
+    return Topics.all unless search
+    Topic.where('title LIKE(?)', "%#{search}%")
+  end
 
   def save_tags(tags)
     current_tags = self.tags.pluck(:name) unless self.tags.nil?
