@@ -7,9 +7,6 @@ class WeightsController < ApplicationController
     @weights = @user_datas.pluck(:weight)
     @day_and_time = @user_datas.pluck(:recorded_date)
     @dates = @day_and_time.map{|a| a.strftime('%Y/%m/%d')}
-  end
-
-  def new
     @weight = Weight.new
   end
 

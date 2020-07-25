@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   end
   root 'top#index'
   resources :users, only: [:index, :show]
-  resources :weights, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :weights, only: [:index, :create, :edit, :update, :destroy]
   resources :meals, only: [:index, :new, :create, :edit, :update, :destroy]
-  resources :topics, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+  resources :topics do
     resources :comments, only: :create
     resources :likes, only: [:create, :destroy]
     collection do
