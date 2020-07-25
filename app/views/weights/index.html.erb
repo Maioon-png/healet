@@ -1,9 +1,25 @@
 <div class="contents_weight-index">  
-  <div class="record-icon">
-    <%= link_to new_weight_path do %>
-      <i class="fas fa-weight fa-2x"></i>
-    <% end %>
+  <div class="record-icon js-modal-open">
+    <i class="fas fa-weight fa-2x"></i>
   </div>
+
+  <div class="modal js-modal">
+      <div class="modal__bg js-modal-close"></div>
+      <div class="modal__content">
+          
+        <div class="redord-contents">
+          <div class="weight-form">
+            <%= form_with model:@weight, local: true  do |form| %>
+              <%= render partial: "form", locals: { form: form } %>
+            <% end %>
+          </div>
+        </div>
+          <div class="modal-close-btn">
+            <a class="js-modal-close" href="">閉じる</a>
+          </div>
+      </div><!--modal__inner-->
+  </div><!--modal-->
+
   <div class="contents_weight-main">
     <div class="weight-grah">
       <canvas id="myChart" width="400" height="400"></canvas>
