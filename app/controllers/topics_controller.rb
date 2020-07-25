@@ -50,6 +50,7 @@ class TopicsController < ApplicationController
 
   def search
     @topics = Topic.search(params[:keyword])
+    @keyword = params[:keyword]
   end
 
   private
