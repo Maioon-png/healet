@@ -19,25 +19,25 @@
           <div class="menu">
             <% unless meal.morning.blank? %>
               <div class="morning">
-                <h2>あさ</h2>
+                <h2>Morning</h2>
                 <p><%= meal.morning %></p>
               </div>
             <% end %>
             <% unless meal.lunch.blank? %>
               <div class="lunch">
-                <h2>ひる</h2>
+                <h2>Lunch</h2>
                 <p><%= meal.lunch %></p>
               </div>
             <% end %>
             <% unless meal.dinner.blank? %>
               <div class="dinner">
-                <h2>よる</h2>
+                <h2>Dinner</h2>
                 <p><%= meal.dinner %></p>
               </div>
             <% end %>
             <% unless meal.other.blank? %>
               <div class="other">
-                <h2>そのた</h2>
+                <h2>Other</h2>
                 <p><%= meal.other %></p>
               </div>
             <% end %>

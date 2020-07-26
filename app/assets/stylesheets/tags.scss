@@ -1,16 +1,22 @@
 .tags {
   width: 500px;
   height: 500px;
-  margin: 30px auto;
+  margin: 0px auto;
   text-align: center;
   color: #555555;
+  padding-top: 30px;
 }
 .tags ul {
   list-style: none;
   margin-top: 10px;
 }
+// タグ詳細ページ
+.contents_tag-show {
+  background-color: #e6e6e6;
+  height: 100%;
+}
 .tag-topic {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .tag-topic a {
   text-decoration: none;

@@ -75,8 +75,20 @@ table td {
 }
 .weight-label {
   position: absolute;
-  top: 13px;
-  left: 70px;
+  top: 7px;
+  left: 80px;
+}
+#weight_weight {
+  width: 250px;
+  background: transparent;
+  border: 1px solid #afadad;
+  color: #535353;
+  border-radius: 2px;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  padding: 4px;
+  margin: 0 auto;
+  display: block;
 }
 // モーダルウィンドウ
 .modal{
