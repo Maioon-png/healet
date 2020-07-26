@@ -33,34 +33,37 @@
     <div class="topic-like" id="topic-<%= @topic.id %>" data-topic-id="<%= @topic.id %>">
       <%= render "likes/like", topic: @topic %>
     </div>
-  </div>
-
-
-
-  <div class="comments-show">
-    <h4>＜コメント一覧＞</h4>
+   </div>
+    <!--コメント-->
+    <div class="comments-show">
+      <h4>＜コメント一覧＞</h4>
       <div class="comments">
-      <% if @comments %>
-        <% @comments.each do |comment| %>
-          <div class="comment">
-            <p>
-              <strong><%= comment.user.name %>：</strong>
-              <%= comment.text %>
-            </p>
-          </div>
-        <% end %>
-      <% end %>
+        <% if @comments.length != 0 %>
+          
+            <% @comments.each do |comment| %>
+              <div class="comment">
+                <p>
+                  <strong><%= comment.user.name %>：</strong>
+                  <%= comment.text %>
+                  <div class="comment_date">
+                    <%= time_ago_in_words(comment.created_at) %>前
+                  </div>
+                </p>
+              </div>
+            <% end %>
+          <% end %>
       </div>
-  </div>
-
-  <div class="comment-form">
-    <% if current_user %>
-      <%= form_with(model: [@topic, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
+    </div>
+    <div class="comment-form">
+      <% if current_user %>
+        <%= form_with(model: [@topic, @comment], local: true, id: "new_comment") do |form| %>
+          <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "textbox" %>
+          <%= form.submit "SEND", class: "form__submit" %>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
-    <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-    <% end %>
-  </div>
+    </div>
+    <!--/コメント-->
+   
 </div>
