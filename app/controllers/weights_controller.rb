@@ -38,7 +38,7 @@ class WeightsController < ApplicationController
 
   def move_to_index
     unless user_signed_in?
-      flash[:alert] = "Please Sign up or log in."
+      flash[:alert] = "サインアップ / ログインをお願いします。"
       redirect_to controller: :top, action: :index
     end
   end
