@@ -190,7 +190,19 @@ button {
 #topic_title {
   width: 100%;
 }
-
+// 検索フォーム
+#topic-search-input {
+  width: 100%;
+  color: #535353;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 2px;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  padding: 4px;
+  margin: 0 auto 10px auto;
+  display: block;
+}
 // 検索結果
 .topic-search-result {
   text-align: center;
