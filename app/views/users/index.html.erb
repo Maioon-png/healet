@@ -7,7 +7,7 @@
     <div class="user-weight center-bottom-box">
       <h1><%= @user.target_weight %><span style="font-size:20px;">Kg</span></h2>
       <div class="top-content-icon">
-        <%= link_to new_weight_path do %>
+        <%= link_to weights_path do %>
           <i class="far fa-edit"></i>
         <% end %>
       </div>
@@ -40,7 +40,7 @@
           <p>RECORDから体重を記録してみよう！</p>
         <% end %>
           <div class="top-content-icon">
-          <%= link_to new_weight_path do %>
+          <%= link_to weights_path do %>
             <i class="fas fa-weight"></i>
           <% end %>
           </div>
