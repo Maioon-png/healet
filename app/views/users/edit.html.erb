@@ -1,8 +1,8 @@
 <div class="user-edit">
   
 
-    <div class="user-form">
-    <h2>Sign up</h2>
+    <div class="user-edit_form">
+    <h2>Edit your data</h2>
     <%= form_for @user, url: {controller: 'users', action: 'update' } do  |f| %>
       <div class="user-inform">
         <div class="field">
@@ -16,17 +16,12 @@
         </div>
 
         <div class="field">
-          <%= f.label "現在の体重", {class: 'user-label'} %><br />
-          <%= f.number_field :start_weight, step: "0.1", min: 0, max: 999, placeholder: "Kg" %>
-        </div>
-
-        <div class="field">
           <%= f.label "目標体重", {class: 'user-label'} %><br />
           <%= f.number_field :target_weight, step: "0.1", min: 0, max: 999, placeholder: "Kg" %>
         </div>
     
       <div class="actions user-from_btn">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "EDIT" %>
       </div>
     <% end %>
   </div>
