@@ -65,7 +65,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'jquery-rails'
-gem 'chart-js-rails'
+# gem 'chart-js-rails'
 gem 'pry-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
