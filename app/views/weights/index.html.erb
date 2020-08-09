@@ -64,10 +64,6 @@
                   id: 'X軸', 
                 }],
               },
-              title: {
-                display: true,
-                text: 'Chart.js Bar Chart'
-              },
               annotation: {
                 drawTime: 'afterDatasetsDraw',
                 annotations: [{
@@ -78,7 +74,7 @@
                   value: <%= @user.target_weight %>,
                   borderColor: 'red',
                   borderWidth: 2,
-                  label: { // ラベルの設定
+                  label: {
                     backgroundColor: 'red',
                     content: '目標体重 <%= @user.target_weight %>kg',
                     enabled: true
