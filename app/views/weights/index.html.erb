@@ -52,13 +52,38 @@
                 }]
             },
             options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            stepSize: 01,
-                        }
-                    }]
-                }
+              scales: {
+                yAxes: [{
+                  id: 'y左軸',
+                    ticks: {
+                      stepSize: 5,
+                    }
+                }],
+                xAxes: [{
+                  id: 'X軸', 
+                }],
+              },
+              title: {
+                display: true,
+                text: 'Chart.js Bar Chart'
+              },
+              annotation: {
+                drawTime: 'afterDatasetsDraw',
+                annotations: [{
+                  id: 'hline',
+                  type: 'line',
+                  mode: 'horizontal',
+                  scaleID: 'y左軸',
+                  value: ,
+                  borderColor: 'black',
+                  borderWidth: 5,
+                  label: { // ラベルの設定
+                    backgroundColor: 'red',
+                    content: 'Test Label',
+                    enabled: true
+                  }
+                }]
+              }
             }
         });
         </script>
