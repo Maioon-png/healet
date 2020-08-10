@@ -1,0 +1,30 @@
+<div class="user-edit">
+  
+    <div class="user-edit_form">
+      <div class="edit_form-title">
+        <h2>Edit Your Data</h2>
+      </div>
+    <%= form_for @user, url: {controller: 'users', action: 'update' } do  |f| %>
+      <div class="user-inform">
+        <div class="field">
+          <%= f.label :email, {class: 'user-label'} %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label "おなまえ", {class: 'user-label'} %><br />
+          <%= f.text_field :name, autofocus: true, maxlength: "6", size: 20 %>
+        </div>
+
+        <div class="field">
+          <%= f.label "目標体重", {class: 'user-label'} %><br />
+          <%= f.number_field :target_weight, step: "0.1", min: 0, max: 999, placeholder: "Kg" %>
+        </div>
+    
+      <div class="actions user-from_btn">
+        <%= f.submit "EDIT" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

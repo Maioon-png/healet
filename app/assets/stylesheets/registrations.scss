@@ -135,3 +135,20 @@ input[type=submit]:focus{
   color: white;
   padding: 30px 0 0 130px;
 }
+
+//ユーザー情報編集ページ
+.user-edit {
+  background-image: url(/images/diet2.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+.user-edit_form {
+  margin: 0 auto;
+  width: 500px;
+  padding-top: 50px;
+}
+.edit_form-title {
+  text-align: center;
+  color: white;
+}
