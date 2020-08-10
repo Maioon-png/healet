@@ -17,14 +17,14 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update(user_params)
-    # redirect_to users_path
+    redirect_to users_path
   end
 
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :name, :target_weight).merge(user_id: current_user.id)
+    params.require(:user).permit(:email, :name, :target_weight)
   end
 
   def move_to_index
